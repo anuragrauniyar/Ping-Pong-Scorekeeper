@@ -5,35 +5,37 @@ const score1 = document.querySelector("#score1");
 const score2 = document.querySelector("#score2");
 const max_value = document.querySelector("#count");
 
-const SUCCESS_CLASS = 'has-text-success';
-const DANGER_CLASS = 'has-text-danger';
+const SUCCESS_CLASS = "has-text-success";
+const DANGER_CLASS = "has-text-danger";
 
 function celebrate() {
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.68 }
-    });
-  }
+  confetti({
+    particleCount: 150,
+    spread: 80,
+    origin: { y: 0.68 },
+  });
+}
+
+function winnerAnnouncement() {
+  player1.disabled = true;
+  player2.disabled = true;
+  celebrate();
+}
 
 function checkWinner() {
-    const maxScore = Number(max_value.value);
-    const player1Score = Number(score1.innerText);
-    const player2Score = Number(score2.innerText);
+  const maxScore = parseInt(max_value.value);
+  const player1Score = parseInt(score1.innerText);
+  const player2Score = parseInt(score2.innerText);
 
-  if (score1.innerText >= max_value.value) {
-    player1.disabled = true;
-    player2.disabled = true;
+  if (player1Score >= maxScore) {
+    winnerAnnouncement();
     score1.classList.add(SUCCESS_CLASS);
     score2.classList.add(DANGER_CLASS);
-    celebrate();
   }
-    else if (score2.innerText >= max_value.value) {
-    player1.disabled = true;
-    player2.disabled = true;
+   else if (player2Score >= maxScore) {
+    winnerAnnouncement();
     score1.classList.add(DANGER_CLASS);
     score2.classList.add(SUCCESS_CLASS);
-    celebrate();
   }
 }
 
