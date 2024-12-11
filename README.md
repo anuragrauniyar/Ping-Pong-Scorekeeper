@@ -5,6 +5,11 @@ Ping-Pong Scorekeeper is a simple and interactive web app that helps track score
 
 ---
 
+## **Live Demo**  
+Check out the live demo of the project here: [Ping-Pong Scorekeeper Live Demo](https://anuragrauniyar.github.io/Ping-Pong-Scorekeeper/)  
+
+---
+
 ## **Features**  
 - Dynamic score tracking for two players.  
 - Adjustable winning score via a dropdown menu.  
