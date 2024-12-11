@@ -17,6 +17,10 @@ function celebrate() {
   }
 
 function checkWinner() {
+    const maxScore = Number(max_value.value);
+    const player1Score = Number(score1.innerText);
+    const player2Score = Number(score2.innerText);
+
   if (score1.innerText >= max_value.value) {
     player1.disabled = true;
     player2.disabled = true;
